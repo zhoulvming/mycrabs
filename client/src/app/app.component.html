@@ -1,0 +1,28 @@
+<md-sidenav-layout [class.m2app-dark]="isDarkTheme">
+  <md-toolbar color="primary">
+
+    <md-icon class="icon-20">pets</md-icon>
+    Crabs
+
+    <div class="app-main-menu">
+      <button md-button (click)="gotoCommunity('cnode')">CNODE</button>
+      <button md-button (click)="gotoCommunity('v2ex')">V2EX</button>
+    </div>
+
+    <span class="app-toolbar-filler"></span>
+    <button md-icon-button>
+      <md-icon>more_vert</md-icon>
+    </button>
+
+    <!--<span class="app-toolbar-filler"></span>
+    <button md-button (click)="isDarkTheme = !isDarkTheme">TOGGLE DARK THEME</button>-->
+  </md-toolbar>
+
+  <div class="app-content">
+    <router-outlet></router-outlet>
+  </div>
+</md-sidenav-layout>
+
+<span class="app-action" [class.m2app-dark]="isDarkTheme">
+  <button md-fab><md-icon>check circle</md-icon></button>
+</span>

@@ -1,0 +1,14 @@
+<span class="app-action" [class.m2app-dark]="isDarkTheme">
+  <button md-fab (click)="gotoBack()"><md-icon>clear</md-icon></button>
+</span>
+
+<div *ngIf="currentTopic">
+  {{currentTopic.title}}
+  <p md-line></p>
+  <div class="detail-content" [innerHTML]="currentTopic.content"></div>
+</div>
+
+<md-divider></md-divider>
+
+
+<topic-reply [replies]="replies"></topic-reply>

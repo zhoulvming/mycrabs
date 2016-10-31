@@ -1,0 +1,11 @@
+<md-list>
+  <md-list-item *ngFor="let reply of replies">
+    <!--<img md-list-avatar [src]="reply.member.avatar_mini">-->
+    <!--<h4 md-line>{{reply.member.username}}</h4>-->
+    <p md-line>
+      <!--<span>{{reply.created}}</span>-->
+    </p>
+    <div class="detail-content" [innerHTML]="reply.content"></div>
+    
+  </md-list-item>
+</md-list>

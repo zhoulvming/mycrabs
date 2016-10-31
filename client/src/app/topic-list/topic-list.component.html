@@ -1,0 +1,10 @@
+<md-list>
+  <md-list-item *ngFor="let topic of topics">
+    <img md-list-avatar [src]="topic.author_avatar_mini">
+    <p md-line (click)="onSelect(topic)">{{topic.title}}</p>
+    <p md-line>
+      <span>{{topic.author_name}} -- {{topic.created}} -- {{topic.replies_count}}</span>
+    </p>
+  </md-list-item>
+  <md-divider></md-divider>
+</md-list>

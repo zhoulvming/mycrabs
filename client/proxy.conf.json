@@ -1,0 +1,10 @@
+{
+  "/v2ex*": {
+    "target": "https://www.v2ex.com",
+    "changeOrigin": true,
+    "pathRewrite": {
+      "^/v2ex_latest": "/api/topics/latest.json",
+      "^/v2ex_reply": "/api/replies/show.json"
+    }
+  }
+}
