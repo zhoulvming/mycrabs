@@ -44,13 +44,25 @@ export class TopicService {
       .catch(this.handleError);
   }
 
-  getCnodeDetailData(id): Promise<any> {
+  getDetailData(channel, id): Promise<any> {
+    if (channel == 'cnode') {
+      return this.getCnodeDetailData(id);
+    } else {
+      return this.getCnodeDetailData(id);
+    }
+  }
+
+  private getCnodeDetailData(id): Promise<any> {
     return this.http.get('http://localhost:3000/cnode-api/topic/'+id).toPromise()
       .then(response => {
         let topic = response.json();
         return topic;
       })
       .catch(this.handleError);
+  }
+
+  private getV2exDetailData(id): Promise<any> {
+    return null;
   }
 
   getV2exReplyData(id): Promise<Reply[]> {

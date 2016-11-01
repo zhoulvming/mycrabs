@@ -460,16 +460,19 @@ router.get('/topic/:id', function(req, res, next){
     var $ = cheerio.load(sres.text, {decodeEntities: false});
     $('#content').each(function(idx, element){
       var $element = $(element);
+      var $topic_header = $element.find('.topic_header');
       var $topic_content = $element.find('.topic_content');
       var $topic_replay = $element.find('.reply_item');
       var replies = [];
       $topic_replay.each(function(jdx, replyItem){
         replies.push({
-          id: $(replyItem).attr('reply_id'),
+          id: $(replyItem).attr('reply_id'), 
           content: $(replyItem).find('.reply_content').html()
         });
       });
       topic = {
+        id: req.params.id,
+        title: $topic_header.find('.put_top').html().replace(/\s+/g, ''),
         content: $topic_content.html(),
         replies: replies
       }
