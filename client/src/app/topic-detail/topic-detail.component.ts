@@ -51,8 +51,6 @@ export class TopicDetailComponent implements OnInit {
       });
     }
 
-    console.log('current topic id is ' + this.channel + topic_id);
-      
     this.topicService.getDetailData(this.channel, topic_id)
       .then(topic => {
         if (!this.currentTopic) {
